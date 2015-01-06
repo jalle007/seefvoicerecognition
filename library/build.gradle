@@ -1,0 +1,90 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'robolectric'
+apply plugin: 'checkstyle'
+
+repositories {
+  mavenCentral()
+  maven { url 'http://guardian.github.com/maven/repo-releases' }
+}
+
+dependencies {
+  compile files('libs/support-annotations-21.0.0-rc1.jar')
+  compile 'com.gu:option:1.3'
+  androidTestCompile 'org.robolectric:robolectric:2.4+'
+  androidTestCompile 'junit:junit:4.11'
+  androidTestCompile 'com.squareup:fest-android:1.0.+'
+  androidTestCompile 'org.mockito:mockito-all:1.9.+'
+}
+
+android {
+  compileSdkVersion 21
+  buildToolsVersion '21.1.1'
+
+  defaultConfig {
+    minSdkVersion 11
+    targetSdkVersion 18
+  }
+
+  lintOptions {
+    abortOnError true
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+}
+
+//robolectric {
+//  // configure the set of classes for JUnit tests
+//  include '**/*Test.class'
+//
+//  // configure max heap size of the test JVM
+//  maxHeapSize = "2048m"
+//}
+
+checkstyle {
+  configFile project.file('../config/checkstyle/checkstyle.xml')
+  showViolations true
+}
+
+apply from: 'https://raw.githubusercontent.com/robbypond/gradle-mvn-push/b2ed833b2fbd9c42bb89ca089b75e29b653084ad/gradle-mvn-push.gradle'
+
+import org.gradle.plugins.signing.Sign
+
+gradle.taskGraph.whenReady { taskGraph ->
+  if (taskGraph.allTasks.any { it instanceof Sign } &&
+      ':library:uploadArchives' in gradle.startParameter.taskNames) {
+    // Use Java 6's console to read from the console (no good for a CI environment)
+    Console console = System.console()
+    console.printf "\n\nWe have to sign some things in this build.\n\nPlease enter your signing details.\n\n"
+    allprojects { ext."signing.password" = console.readPassword("PGP Private Key Password: ") }
+  }
+}
+
+task addTest {
+  if ((new File('library.iml')).exists()) {
+    def src = ['src/test/java']
+    def file = file('library.iml')
+
+    doLast {
+      def parsedXml = (new XmlParser()).parse(file)
+      def node = parsedXml.component[1].content[0]
+      src.each {
+        def path = 'file://$MODULE_DIR$/' + "${it}"
+        def set = node.find { it.@url == path }
+        if (set == null) {
+          new Node(node, 'sourceFolder', ['url': 'file://$MODULE_DIR$/' + "${it}", 'isTestSource': "true"])
+          def writer = new StringWriter()
+          new XmlNodePrinter(new PrintWriter(writer)).print(parsedXml)
+          file.text = writer.toString()
+        }
+      }
+    }
+  }
+}
+
+// always do the addtest on prebuild
+gradle.projectsEvaluated {
+    preBuild.dependsOn(addTest)
+}

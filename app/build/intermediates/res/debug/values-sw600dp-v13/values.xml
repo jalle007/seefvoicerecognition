@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values-sw600dp/values.xml -->
+    <eat-comment/>
+    <dimen name="configure_dialog_max_height">600dp</dimen>
+    <dimen name="configure_dialog_width">480dp</dimen>
+    <style name="FilePicker.Theme.Base" parent="android:Theme.Holo.Light.Dialog">
+        <item name="isDialog">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

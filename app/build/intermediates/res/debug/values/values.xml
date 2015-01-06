@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="saNoOfMatches">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <color name="action_select">#6d6d6d</color>
+    <color name="dark_grey">#4d4d4d</color>
+    <color name="grey">#e6e6e6</color>
+    <declare-styleable name="FilePickerTheme"><attr format="boolean" name="isDialog"/></declare-styleable>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <plurals name="select_dir">
+        <item quantity="one">Select directory</item>
+        <item quantity="other">Select directories</item>
+    </plurals>
+    <plurals name="select_dir_or_file">
+        <item quantity="one">Select directory or file</item>
+        <item quantity="other">Select directories or files</item>
+    </plurals>
+    <plurals name="select_file">
+        <item quantity="one">Select file</item>
+        <item quantity="other">Select files</item>
+    </plurals>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Seef Voice Recognition</string>
+    <string name="btSpeak">Speak</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <string name="create_folder_error">Failed to create folder</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="etSearchHint">Select folder</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <string name="go_back">Go back</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="menu_settings">Settings</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <string name="name">Name</string>
+    <string name="new_folder">New folder</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="sNoOfMatches">No of Matches</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <string name="select_something_first">Please select something first</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_voice_recognition">Voice Recognition</string>
+    <string name="tvTextMatches">Text Matches</string>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+    <!-- From: file:/C:/Users/jalle/Dropbox/Projects/Java/seefvoicerecognition/app/build/intermediates/exploded-aar/com.nononsenseapps/filepicker/1.1.3/res/values/values.xml -->
+    <eat-comment/>
+    <style name="FilePicker.ActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_solid_filepickertheme</item>
+        <item name="android:displayOptions">disableHome|showTitle</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="FilePicker.ActionButton.Overflow" parent="android:Widget.Holo.ActionButton.Overflow">
+        <!-- <item name="android:src">@drawable/ic_action_overflow</item> -->
+    </style>
+    <style name="FilePicker.Theme" parent="FilePicker.Theme.Base">
+        <item name="android:actionBarStyle">@style/FilePicker.ActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@style/FilePicker.ActionButton.Overflow</item>
+        <item name="android:actionBarItemBackground">@drawable/ab_solid_filepickertheme</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <!--
+        <item name="android:windowBackground">@android:color
+        /transparent</item>
+        -->
+        <!-- <item name="android:actionBarWidgetTheme">@android:style/Theme.Holo</item> -->
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+    <style name="FilePicker.Theme.Base" parent="android:Theme.Holo.Light">
+        <item name="isDialog">false</item>
+    </style>
+</resources>
